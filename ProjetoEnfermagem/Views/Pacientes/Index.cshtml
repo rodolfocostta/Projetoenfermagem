@@ -1,0 +1,59 @@
+﻿@model IEnumerable<EnfermariaSenac.Models.Paciente>
+
+@{
+    ViewData["Title"] = "Cadastro Paciente";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Cadastro Paciente</h1>
+
+<p>
+    <a asp-action="Create">Cadastrar Novo Paciente</a>
+</p>
+
+<div class="container">
+    <table class="table mx-auto">
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.Nome_Paciente)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Idade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Data_Nasc)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.Alergico)
+                </th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome_Paciente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Idade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Data_Nasc)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Alergico)
+                    </td>
+                    <td>
+                        <a asp-action="Edit" asp-route-id="@item.ID_Paciente">Edit</a> |
+                        <a asp-action="Details" asp-route-id="@item.ID_Paciente">Details</a> |
+                        <a asp-action="Delete" asp-route-id="@item.ID_Paciente">Delete</a>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
+

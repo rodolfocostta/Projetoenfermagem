@@ -1,0 +1,48 @@
+﻿@model IEnumerable<EnfermariaSenac.Models.Prontuario>
+
+@{
+    ViewData["Title"] = "Prontuario atendimento";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Prontuario Atendimento</h1>
+
+<p>
+    <a asp-action="Create">Novo Prontuario</a>
+</p>
+<table class="table mx-auto">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome_Enfermagem)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Relatorioatendimento)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Paciente)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome_Enfermagem)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Relatorioatendimento)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID_Prontuario">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID_Prontuario">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID_Prontuario">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

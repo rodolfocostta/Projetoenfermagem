@@ -1,0 +1,31 @@
+﻿@model EnfermariaSenac.Models.Enfermagem
+
+@{
+    ViewData["Title"] = "Detales";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Detales</h1>
+
+<div>
+    <h4>Enfermagem</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-md-4 mx-auto">
+            @Html.DisplayNameFor(model => model.Nome_Enfermagem)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Nome_Enfermagem)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Coren)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Coren)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.ID_Enfermagem">Edit</a> |
+    <a asp-action="Index">Voltar para lista</a>
+</div>

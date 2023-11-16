@@ -1,0 +1,30 @@
+html {
+    font-size: 14px;
+}
+
+
+@media (min-width: 590px) {
+    html {
+        font-size: 16px;
+        text-align: center;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+    box-shadow: 0 0 0 0.1rem black, 0 0 0 0.25rem ;
+    align-items: center;
+    align-content: space-evenly flex-start;
+}
+
+html {
+    position: relative;
+    min-height: 100%;
+    text-align: center
+}
+
+body {
+    margin-bottom: 60px;
+    text-align:center;
+    align-content:space-evenly flex-start;
+
+}
